@@ -26,19 +26,19 @@ let thirdQues = await inquirer.prompt([
         choices: ["YES", "NO"],
     }
 ]);
-if (thirdQues.third === "YES") {
-    let forthQues = await inquirer.prompt([
-        {
-            name: "forth",
-            message: "PLEASE ADD YOUR COURSE",
-            type: "list",
-            choices: ["WEB DEVELOPMENT", "CYBER SECURITY", "MACHINE LEARNING", "DATA SCIENCE", "PHYTHON PROGRAMMING", "DOCKERS OR KUBERNETEES"]
-        }
-    ]);
-    console.log(`YOUR CURRENT COURSES ARE "${secondQues.second}" | "${forthQues.forth}"`);
+let forthQues = await inquirer.prompt([
+    {
+        name: "forth",
+        message: "PLEASE ADD YOUR COURSE",
+        type: "list",
+        choices: ["WEB DEVELOPMENT", "CYBER SECURITY", "MACHINE LEARNING", "DATA SCIENCE", "PHYTHON PROGRAMMING", "DOCKERS OR KUBERNETEES"]
+    }
+]);
+if (thirdQues.third === "NO") {
+    console.log("NO NEW COURSE IS ADDED");
 }
 else {
-    console.log("NO NEW COURSE IS ADDED");
+    console.log(`YOUR CURRENT COURSES ARE "${secondQues.second}" | "${forthQues.forth}"`);
 }
 let balance = 20000;
 let one = 100;
@@ -96,3 +96,8 @@ if (seventhQues.seventh === "PAYFEES") {
 else {
     console.log("DEAR CUSTOMER YOUR  CURRENT BALANCE IS ${balance}");
 }
+console.log("\n YOUR ID CARD! ");
+console.log(`*  NAME: ${firstQues.first}`);
+console.log(`*  ID: ${id}`);
+console.log(`*  COURSE: "${secondQues.second}" | "${forthQues.forth}"`);
+console.log(`*  STATUS: ${firstQues.first} YOU ARE ONSITE STUDENT`);
